@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+</head>
+<body>
+<h1>Resultat</h1>
+<h2>Brugerliste</h2>
+<div th:if="${not #lists.isEmpty(brugerliste)}">
+    <p>Brugere:</p>
+    <ul>
+        <li th:each="bruger : ${brugerliste}">
+            <p th:text="'Navn: ' + ${bruger.navn}"></p>
+            <p th:text="'Email: ' + ${bruger.email}"></p>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
